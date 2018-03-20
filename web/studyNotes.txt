@@ -1,0 +1,59 @@
+compile command:编译指令     编译时转化为servelnet
+    page       <%@ page errorPage="handle_error.jsp" %>
+    include    <%@ include file="header.html"%>
+               <%@ include file="footer.jsp"%>
+active command：动作指令     请求期间动态执行  如页面重定向
+    include     <jsp:include page="header.html"/>
+                <jsp:include page="body.jsp">
+                    <jsp:param name="bgcolor" value="red"/>
+                </jsp:include>
+    forward     <jsp:forward page="login.jsp">
+                    <jsp:param value="JesseWong" name="userName"/>
+                    <jsp:param value="HelloJesse" name="password"/>
+                </jsp:forward>
+    useBean     <jsp:useBean id="user" class="mybeans.UserEntity"/>
+                <jsp:setProperty name="user" property="userName"/>
+                <jsp:getProperty name="user" property="userName"/>
+                mybeans.UserEntity是一个JavaBean类
+内置对象 internal objects
+    out
+        println() print() newLine()
+        getBufferSize() getRemaining() flush() clear() clearBuffer()
+    request
+      获取提交的数据
+        getParameter()
+        getParameterValues()
+      web组件之间通信：
+        setAttributes()
+        getAttributes()
+      获取请求信息
+        请求方法名：<%=request.getMethod()%><br>
+        请求的资源：<%=request.getRequestURI()%><br>
+        请求使用的协议：<%=request.getProtocol()%><br>
+        请求的服务器IP：<%=request.getServerName()%><br>
+        请求的服务器端口：<%=request.getServerPort()%><br>
+        客户端的IP地址：<%=request.getRemoteAddr()%><br>
+        客户端的主机名：<%=request.getRemoteHost()%><br>
+        表单提交来的值：<%=request.getParameter("userName")%><br>
+    response
+        setHeader()
+        setIntHeader()
+        setRedirect()
+        addCookie()
+    session
+      获取session信息
+        getId() getCreationTime() getLastAccessedTime()
+        getMaxInactiveInterval() isNew()
+      组件间信息传递
+        setAttribute() getAttribute()
+      清除session对象 invalidate()
+
+    application 为多用户共享全局数据提供方便
+        setAttribute() getAttribute()
+        getServerInfo() getServletContextName() getVirtualServerName()
+    config
+    page
+        extends from objects
+    exception
+    pageContext
+
