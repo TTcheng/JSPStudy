@@ -1,4 +1,4 @@
-compile command:编译指令     编译时转化为servelnet
+compile command:编译指令     编译时转化为servlet
     page       <%@ page errorPage="handle_error.jsp" %>
     include    <%@ include file="header.html"%>
                <%@ include file="footer.jsp"%>

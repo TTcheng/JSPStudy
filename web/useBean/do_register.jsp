@@ -16,9 +16,6 @@
     <title>注册信息处理</title>
 </head>
 <body>
-<jsp:useBean id="user" class="mybeans.UserEntity"/>
-<jsp:setProperty name="user" property="userName"/>
-<jsp:setProperty name="user" property="password"/>
 <%
     String userName = request.getParameter("userName");
     String password = request.getParameter("password");
@@ -30,6 +27,10 @@
 %>
 <br>
 <hr>
+<jsp:useBean id="user" class="mybeans.UserEntity"/>
+<jsp:setProperty name="user" property="userName"/>
+<jsp:setProperty name="user" property="password"/>
+
 Using useBean :<br>
 <jsp:getProperty name="user" property="userName"/>
 <br>
